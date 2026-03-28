@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Green Channel Web 配信サブウィンドウ",
-  "version": "1.0.0",
-  "description": "sp.gch.jp のライブ配信ページで、各chを映像中心のサブウィンドウで開けます。",
+  "version": "1.0.1",
+  "description": "グリーンチャンネルWeb（sp.gch.jp）のライブで、1ch〜5chを映像だけ見やすい別ウィンドウで開けます。",
   "permissions": ["windows"],
   "background": {
     "service_worker": "background.js"
@@ -14,5 +14,9 @@
       "css": ["inject.css"],
       "run_at": "document_idle"
     }
-  ]
+  ],
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
 }
