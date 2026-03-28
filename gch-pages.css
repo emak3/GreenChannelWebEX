@@ -71,17 +71,24 @@ a:hover {
 }
 
 .site-header__logo {
-  width: 44px;
-  height: 44px;
-  background: #fff;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  background: transparent;
   border-radius: var(--radius);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 1.4rem;
-  color: var(--gch-green-dark);
   flex-shrink: 0;
+  overflow: hidden;
+}
+
+.site-header__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: var(--radius);
 }
 
 .site-header__titles h1 {
