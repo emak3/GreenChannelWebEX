@@ -1,0 +1,277 @@
+/* Green Channel Web 風ドキュメント用（公式サイトとは無関係・インスパイアのみ） */
+:root {
+  --gch-green: #129954;
+  --gch-green-dark: #0d7a3d;
+  --gch-orange: #ff8534;
+  --gch-bg: #f4f4f4;
+  --gch-card: #fff;
+  --gch-border: #e1e1e1;
+  --gch-text: #333;
+  --gch-muted: #666;
+  --gch-lead-en: #888;
+  --radius: 4px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo,
+    sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.75;
+  color: var(--gch-text);
+  background: var(--gch-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--gch-green-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--gch-orange);
+}
+
+.site-header {
+  background: linear-gradient(
+    135deg,
+    var(--gch-green) 0%,
+    var(--gch-green-dark) 100%
+  );
+  color: #fff;
+  padding: 1.6rem 2rem 2rem;
+  box-shadow: var(--shadow);
+}
+
+.site-header__inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.site-header__logo {
+  width: 44px;
+  height: 44px;
+  background: #fff;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--gch-green-dark);
+  flex-shrink: 0;
+}
+
+.site-header__titles h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+
+.site-header__titles p {
+  margin: 0.4rem 0 0;
+  font-size: 1.3rem;
+  opacity: 0.92;
+}
+
+.site-nav {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  background: var(--gch-card);
+  border-bottom: 1px solid var(--gch-border);
+}
+
+.site-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.site-nav a {
+  display: block;
+  padding: 1rem 1.6rem;
+  color: var(--gch-text);
+  text-decoration: none;
+  font-size: 1.4rem;
+  border-bottom: 3px solid transparent;
+}
+
+.site-nav a:hover {
+  color: var(--gch-green);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--gch-green-dark);
+  font-weight: 700;
+  border-bottom-color: var(--gch-orange);
+}
+
+main {
+  flex: 1;
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.4rem 2rem 4rem;
+}
+
+.c-lead {
+  margin: 0 0 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gch-text);
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid var(--gch-green);
+}
+
+.c-lead__en {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--gch-lead-en);
+  margin-left: 0.6rem;
+}
+
+.c-card {
+  background: var(--gch-card);
+  border: 1px solid var(--gch-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.4rem 2.8rem;
+  margin-bottom: 2rem;
+}
+
+.c-card h2 {
+  margin: 2rem 0 1rem;
+  font-size: 1.8rem;
+  color: var(--gch-green-dark);
+  padding-left: 1rem;
+  border-left: 4px solid var(--gch-orange);
+  line-height: 1.4;
+}
+
+.c-card h2:first-child {
+  margin-top: 0;
+}
+
+.c-card h3 {
+  margin: 1.6rem 0 0.8rem;
+  font-size: 1.5rem;
+  color: var(--gch-text);
+}
+
+.c-card p,
+.c-card li {
+  margin: 0.8rem 0;
+}
+
+.c-card ul {
+  padding-left: 2rem;
+}
+
+.c-card li {
+  margin: 0.5rem 0;
+}
+
+.c-card code {
+  background: #f0f0f0;
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+  font-size: 0.92em;
+  border: 1px solid var(--gch-border);
+}
+
+.c-note {
+  background: #fff8f0;
+  border: 1px solid #ffe0c2;
+  border-radius: var(--radius);
+  padding: 1.2rem 1.6rem;
+  font-size: 1.4rem;
+  margin: 1.6rem 0;
+}
+
+.c-note strong {
+  color: var(--gch-orange);
+}
+
+.c-btn-row {
+  margin-top: 2rem;
+}
+
+.c-btn {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  background: var(--gch-green);
+  color: #fff !important;
+  text-decoration: none !important;
+  border-radius: var(--radius);
+  font-size: 1.4rem;
+  font-weight: 700;
+  box-shadow: 0 2px 0 var(--gch-green-dark);
+}
+
+.c-btn:hover {
+  background: var(--gch-green-dark);
+  color: #fff !important;
+}
+
+.site-footer {
+  background: #2a2a2a;
+  color: #ccc;
+  padding: 2.4rem 2rem;
+  font-size: 1.3rem;
+  margin-top: auto;
+}
+
+.site-footer__inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.site-footer p {
+  margin: 0.6rem 0;
+}
+
+.site-footer a {
+  color: #9fd4b8;
+}
+
+.site-footer a:hover {
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .site-header__titles h1 {
+    font-size: 1.8rem;
+  }
+
+  .c-card {
+    padding: 1.6rem 1.4rem;
+  }
+}
