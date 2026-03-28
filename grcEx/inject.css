@@ -133,8 +133,11 @@ body.gch-webex-popout #player-main-wrap.l-box.narrow {
   min-height: 0 !important;
   display: flex !important;
   flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
   z-index: 2147483000 !important;
   overflow: hidden !important;
+  background: #000 !important;
 }
 
 body.gch-webex-popout #player-main-wrap .top_tabs,
@@ -151,11 +154,14 @@ body.gch-webex-popout .p-main__tabs.check-visible {
   padding: 0 !important;
   margin: 0 !important;
   border: none !important;
-  flex: 1 1 auto !important;
+  flex: 0 0 auto !important;
   min-height: 0 !important;
   display: flex !important;
   flex-direction: column !important;
-  height: 100% !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
 }
 
 body.gch-webex-popout .c-card.no-bd {
@@ -163,11 +169,17 @@ body.gch-webex-popout .c-card.no-bd {
   box-shadow: none !important;
   margin: 0 !important;
   padding: 0 !important;
-  flex: 1 1 auto !important;
+  flex: 0 0 auto !important;
   min-height: 0 !important;
   display: flex !important;
   flex-direction: column !important;
   overflow: hidden !important;
+  /* ビューポートが 16:9 でなくても、映像枠は常に 16:9（余白は黒） */
+  width: min(100vw, calc(100dvh * 16 / 9)) !important;
+  max-width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  height: auto !important;
+  max-height: 100dvh !important;
 }
 
 body.gch-webex-popout .c-video__wrap.top_design {
@@ -205,19 +217,19 @@ body.gch-webex-popout #streaksplayer-area.top_player {
   height: 100% !important;
 }
 
-/* ポップアップ枠は実表示領域が 16:9 とずれやすく、contain で左右に黒帯 → cover で幅まで埋める（上下は軽くトリミング） */
+/* 16:9 枠内でソースのアスペクトを維持（歪み・過剰トリミングを防ぐ） */
 body.gch-webex-popout video:not(.vjs-tech),
 body.gch-webex-popout .streaksplayer-video {
   flex: 1 1 auto !important;
   align-self: stretch !important;
   width: 100% !important;
   height: 100% !important;
-  min-width: 100% !important;
-  min-height: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
   max-width: none !important;
   max-height: none !important;
   margin: 0 !important;
-  object-fit: cover !important;
+  object-fit: contain !important;
   object-position: center !important;
 }
 
@@ -240,13 +252,14 @@ body.gch-webex-popout .video-js .vjs-tech {
   max-width: none !important;
   max-height: none !important;
   margin: 0 !important;
-  object-fit: cover !important;
+  object-fit: contain !important;
   object-position: center !important;
 }
 
 body.gch-webex-popout .vjs-poster {
-  object-fit: cover !important;
-  background-size: cover !important;
+  object-fit: contain !important;
+  background-size: contain !important;
+  background-position: center !important;
 }
 
 body.gch-webex-popout #streaksplayer-area iframe,

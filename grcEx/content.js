@@ -91,9 +91,35 @@
     };
   }
 
+  /** popup の外寸は 16:9 でも、枠・タイトルバーで内側が歪む → 内寸 960×540 になるよう外寸を補正 */
+  function scheduleResizePopoutTo169() {
+    if (typeof chrome === "undefined" || !chrome.runtime || !chrome.runtime.id) {
+      return;
+    }
+    function send() {
+      chrome.runtime.sendMessage(
+        {
+          action: "resizePopoutTo169",
+          innerWidth: window.innerWidth,
+          innerHeight: window.innerHeight,
+        },
+        function () {
+          if (chrome.runtime.lastError) {
+            /* 応答不要 */
+          }
+        }
+      );
+    }
+    requestAnimationFrame(function () {
+      requestAnimationFrame(send);
+    });
+    window.setTimeout(send, 400);
+  }
+
   function applyPopoutMode(ch) {
     document.documentElement.classList.add("gch-webex-popout");
     document.body.classList.add("gch-webex-popout");
+    scheduleResizePopoutTo169();
     var attempts = 0;
     var t = setInterval(function () {
       attempts++;

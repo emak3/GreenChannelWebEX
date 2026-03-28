@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Green Channel Web 配信サブウィンドウ",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "グリーンチャンネルWeb（sp.gch.jp）のライブで、1ch〜5chを映像だけ見やすい別ウィンドウで開けます。",
   "permissions": ["windows"],
   "background": {
